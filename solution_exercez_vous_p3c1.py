@@ -1,7 +1,7 @@
 from datetime import *
 
 try:
-    date_de_naissance = int(input("Quelle est votre date de naissance ?"))
+    date_de_naissance = int(input("What is date of birth?"))
     age = int(datetime.now().strftime("%Y")) - date_de_naissance
 except:
     print("Oups, une erreur s'est glissée dans le code.")
