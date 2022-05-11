@@ -20,7 +20,7 @@ class RockPaperScissors :
     """
     def _init_(self, new_player_score, new_ai_score, player_label, ai_label):
         """
-        Class constructor which initializes the variables
+        Constructor of the class which initializes the variables
         """
         self.player_score = 0
         self.artificial_intelligence_score = 0
@@ -46,7 +46,7 @@ class RockPaperScissors :
         elif ai_choice == 2 and player_choice == 3:
             self.player_score += 1
 
-    def player(self, player_choice):
+    def play(self, player_choice):
         """
         Method which updates the label depending on the choices made
         """
