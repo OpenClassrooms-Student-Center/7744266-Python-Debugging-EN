@@ -66,25 +66,25 @@ try:
     paper = PhotoImage(file ='paper.gif')
     scissors = PhotoImage(file ='scissors.gif')
 except RuntimeError:
-    print("You've used the PhotoImage function too early. Use it after Tk()")
+    print("You've used the PhotoImage function too soon. Use it after Tk()")
 
 try:
     zero = PhotoImage(file ='zero.jep')
 except TclError:
     print("It seems that the jpg image type is not supported by PhotoImage")
 
-fenetre = Tk()
-fenetre.title("Rock Paper Scissors")
+window = Tk()
+window.title("Rock Paper Scissors")
     
 try:
-    text1 = Label(fenetre, text="You", font=("Arial", "20", "bold"))
+    text1 = Label(window, text="You", font=("Arial", "20", "bold"))
     text1.grid(row=0,column=0)
 
     text2 = Label(window, text="Artificial intelligence", font=("Arial", 20, "bold"))
     text2.grid(row=0,column=2)
 
     text3 = Label(window, text="To play, click on one of the icons below.",font=("Arial", 20, "bold"))
-    texte3.grid(row=3, columnspan =3, pady =5)
+    text3.grid(row=3, columnspan =3, pady =5)
 
     new_player_score = Label(window, text="0", font=("Arial", 20, "bold"))
     new_player_score.grid(row=1, column=0)
