@@ -1,29 +1,29 @@
 # AttributeError
 
 #import random
-#print("La valeur générée est :", random.randint(0, 10))
+#print("The value generated is:", random.randint(0, 10))
 
 # KeyError
 
-#projetParcoursDAPython = {"Projet 1" : "Prenez en main votre formation Python", 
-#                "Projet 2" : "Utilisez les bases de Python pour l'analyse de marché", 
-#                "Projet 3" : "Designez une application Python adaptée aux besoins d'un client"}
-#print(projetParcoursDAPython["Projet 4"])
+#projectPathPythonD = {"Project 1": "Take charge of your Python training program", 
+#                "Project 2": "Use Python basics for market analysis",
+#                "Project 3": "Design a Python application suited to a client's needs}
+#print(projectPathPythonD["Project 4"])
 
 # IndexError
 
-#liste = [10, 20, 30, 40, 50, 60]
-#print(liste[7])
+#list = [10, 20, 30, 40, 50, 60]
+#print(list[7])
 #print(list({"1" : "A", "2" : "B"}))
 
 # NameError
 
-#print(factorielle_recursive(42))
+#print(recursive_factorial(42))
 
 # SyntaxError
 
 #if True
-#    print "C'est vrai
+#    print "It's true
 
 # TypeError
 
@@ -34,7 +34,7 @@
 
 #print(int("5"))
 #print(float("5.0"))
-#print(int("cinq"))
+#print(int("five"))
 #print(int("five"))
 #list({"1" : "A", "2" : "B"})
 
@@ -45,5 +45,5 @@
  
 # ModuleNotFound
 
-#import moduleInconnu
+#import moduleNotFound
 
