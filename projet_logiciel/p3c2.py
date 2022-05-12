@@ -68,64 +68,64 @@ try:
     paper = PhotoImage(file ='paper.gif')
     scissors = PhotoImage(file ='scissors.gif')
 except RuntimeError:
-    print("Tu as utilisé la fonction PhotoImage trop tôt. Fait le après Tk()")
+    print("You've used the PhotoImage function too soon. Use it after Tk()")
 
 try:
     zero = PhotoImage(file ='zero.gif')
 except TclError:
-    print("Il semble que le type d'image jpg n'est pas supporté par PhotoImage")
+    print("It seems that the jpg image type is not supported by PhotoImage")
 
 try:
-    texte1 = Label(fenetre, text="Vous", font=("Arial", "20", "bold"))
-    texte1.grid(row=0,column=0)
+    text1 = Label(window, text="You", font=("Arial", "20", "bold"))
+    text1.grid(row=0,column=0)
 
-    texte2 = Label(fenetre, text="Intelligence artificielle", font=("Arial", 20, "bold"))
-    texte2.grid(row=0,column=2)
+    text2 = Label(window, text="Artificial intelligence", font=("Arial", 20, "bold"))
+    text2.grid(row=0,column=2)
 
-    texte3 = Label(fenetre, text="Pour jouer, cliquez sur une des icônes ci-dessous.",font=("Arial", 20, "bold"))
-    texte3.grid(row=3, columnspan =3, pady =5)
+    text3 = Label(window, text="To play, click on one of the icons below.",font=("Arial", 20, "bold"))
+    text3.grid(row=3, columnspan =3, pady =5)
 
-    nouveau_score_joueur = Label(fenetre, text="0", font=("Arial", 20, "bold"))
-    nouveau_score_joueur.grid(row=1, column=0)
+    new_player_score = Label(window, text="0", font=("Arial", 20, "bold"))
+    new_player_score.grid(row=1, column=0)
 
-    nouveau_score_ia = Label(fenetre, text="0", font=("Arial", 20, "bold"))
-    nouveau_score_ia.grid(row=1, column=2)
+    new_ai_score = Label(window, text="0", font=("Arial", 20, "bold"))
+    new_ai_score.grid(row=1, column=2)
 
-    label_joueur = Label(fenetre, image=zero)
-    label_joueur.grid(row =2, column =0)
+    player_label = Label(window, image=zero)
+    player_label.grid(row =2, column =0)
 
-    label_vs = Label(fenetre, image=versus)
-    label_vs.grid(row =2, column =1)
+    vs_label = Label(window, image=versus)
+    vs_label.grid(row =2, column =1)
 
-    label_ia = Label(fenetre, image=zero)
-    label_ia.grid(row =2, column =2)
+    ai_label = Label(window, image=zero)
+    ai_label.grid(row =2, column =2)
 except NameError:
-    print("Il semble que la fonction Label() n'a pas été importée.")
+    print("It seems that the function Label () has not been imported.")
 
 try:
-    jeu = PierreFeuilleCiseaux(nouveau_score_joueur, nouveau_score_ia, label_joueur, label_ia)
+    game = RockPaperScissors(new_player_score, new_ai_score, player_label, ai_label)
 except NameError:
-    print("La variable 'nouveau_score_joueur' n'est pas encore définie.")
+    print("The variable 'new_player_score' is not yet defined.")
 
 try:
-    bouton_pierre = Button(fenetre,command=jeu.jouer_pierre)
-    bouton_pierre.configure(image=pierre)
-    bouton_pierre.grid(row =4, column =0)
+    rock_button = Button(window,command=game.play_rock)
+    rock_button.configure(image=rock)
+    rock_button.grid(row =4, column =0)
 
-    bouton_feuille = Button(fenetre,command=jeu.jouer_feuille)
-    bouton_feuille.configure(image=feuille)
-    bouton_feuille.grid(row =4, column =1,)
+    paper_button = Button(window,command=game.play_paper)
+    paper_button.configure(image=paper)
+    paper_button.grid(row =4, column =1,)
 
-    bouton_ciseaux = Button(fenetre,command=jeu.jouer_ciseaux)
-    bouton_ciseaux.configure(image=ciseaux)
-    bouton_ciseaux.grid(row =4, column =2)
+    scissors_button = Button(window,command=game.play_scissors)
+    scissors_button.configure(image=scissors)
+    scissors_button.grid(row =4, column =2)
 
-    bouton_recommence = Button(fenetre,text='Rejouer',command=jeu.rejouer,font=("Courier", 20, "bold"))
-    bouton_recommence.grid(row =5, column =0, pady =10, sticky=E)
+    play_again_button = Button(window,text='Play again',command=game.play_again,font=("Courier", 20, "bold"))
+    play_again_button.grid(row =5, column =0, pady =10, sticky=E)
 
-    bouton_quitter = Button(fenetre,text='Quitter',command=quit,font=("Courier", 20, "bold"))
-    bouton_quitter.grid(row =5, column =2, pady =10, sticky=W)
+    quit_button = Button(window,text='Quit',command=quit,font=("Courier", 20, "bold"))
+    quit_button.grid(row =5, column =2, pady =10, sticky=W)
 except NameError:
-    print("Il manque des variables")
+    print("Variables are missing")
     
-fenetre.mainloop()
+window.mainloop()
