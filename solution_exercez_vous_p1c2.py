@@ -1,14 +1,14 @@
-def direBonjourOuBonsoir(nombreDeFois, prenom):
-    choix = input("Tapez 1 pour dire Bonjour et 2 pour dire Bonsoir")
-    if choix == "1":
+def sayGoodMorningOrGoodAfternoon(numberOfTimes, name):
+    choice = input("Type 1 to say good morning and 2 to say good afternoon")
+    if choice == "1":
         i = 0
-        while i < nombreDeFois:
-            print(f"Bonjour {prenom}")
+        while i < numberOfTimes:
+            print(f"Good morning {name}")
             i = i + 1
-    elif choix == str(2):
-        for i in range(0, nombreDeFois):
-            print(f"Bonsoir {prenom}")
+    elif choice == str(2):
+        for i in range(0, numberOfTimes):
+            print(f"Good evening {name}")
     else:
-        print("Je n'ai pas compris votre choix")
+        print("I didn't understand your choice")
 
-direBonjourOuBonsoir(5, "Bob")
+sayGoodMorningOrGoodAfternoon(5, "Bob")
