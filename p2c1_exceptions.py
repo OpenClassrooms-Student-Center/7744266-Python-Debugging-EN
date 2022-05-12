@@ -40,7 +40,7 @@
 
 # FileNotFound
 
-#f = open("fichier.txt", "r")
+#f = open("file.txt", "r")
 #print(f.read())
  
 # ModuleNotFound
