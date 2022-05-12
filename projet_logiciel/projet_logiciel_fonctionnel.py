@@ -3,113 +3,113 @@
 from random import randint 
 from tkinter import *
 
-class PierreFeuilleCiseaux:
-    def __init__(self, nouveau_score_joueur, nouveau_score_ia, label_joueur, label_ia):
-        self.score_joueur = 0
-        self.score_intelligence_artificielle = 0
-        self.nouveau_score_joueur = nouveau_score_joueur
-        self.nouveau_score_ia = nouveau_score_ia
-        self.label_joueur = label_joueur
-        self.label_ia = label_ia
+class RockPaperScissors:
+    def __init__(self, new_player_score, new_ai_score, player_label, ai_label):
+        self.player_score = 0
+        self.artificial_intelligence_score = 0
+        self.new_player_score = new_player_score
+        self.new_ai_score = new_ai_score
+        self.player_label = player_label
+        self.ai_label = ai_label
 
-    def maj_scores(self, choix_ia, choix_joueur):
-        if choix_ia == 1 and choix_joueur == 2:
-            self.score_joueur += 1
-        elif choix_ia == 2 and choix_joueur == 1:
-            self.score_intelligence_artificielle += 1
-        elif choix_ia == 1 and choix_joueur == 3:
-            self.score_intelligence_artificielle += 1
-        elif choix_ia == 3 and choix_joueur == 1:
-            self.score_joueur += 1
-        elif choix_ia == 3 and choix_joueur == 2:
-            self.score_intelligence_artificielle += 1
-        elif choix_ia == 2 and choix_joueur == 3:
-            self.score_joueur += 1
+    def update_scores(self, ai_choice, player_choice):
+        if ai_choice == 1 and player_choice == 2:
+            self.player_score += 1
+        elif ai_choice == 2 and player_choice == 1:
+            self.artificial_intelligence_score += 1
+        elif ai_choice == 1 and player_choice == 3:
+            self.artificial_intelligence_score += 1
+        elif ai_choice == 3 and player_choice == 1:
+            self.player_score += 1
+        elif ai_choice == 3 and player_choice == 2:
+            self.artificial_intelligence_score += 1
+        elif ai_choice == 2 and player_choice == 3:
+            self.player_score += 1
 
-    def jouer(self, choix_joueur):
-        choix_ia = randint(1,3)
-        if choix_ia==1:
-            self.label_ia.configure(image=pierre)
-        elif choix_ia==2:
-            self.label_ia.configure(image=feuille)
+    def play(self, player_choice):
+        ai_choice = randint(1,3)
+        if ai_choice==1:
+            self.ai_label.configure(image=rock)
+        elif ai_choice==2:
+            self.ai_label.configure(image=paper)
         else:
-            self.label_ia.configure(image=ciseaux)
-        self.maj_scores(choix_ia,choix_joueur)
-        self.nouveau_score_joueur.configure(text=str(self.score_joueur))
-        self.nouveau_score_ia.configure(text=str(self.score_intelligence_artificielle))
+            self.ai_label.configure(image=scissors)
+        self.update_scores(ai_choice,player_choice)
+        self.new_player_score.configure(text=str(self.player_score))
+        self.new_ai_score.configure(text=str(self.artificial_intelligence_score))
     
-    def jouer_pierre(self):
-        self.jouer(1)
-        self.label_joueur.configure(image=pierre)
+    def play_rock(self):
+        self.play(1)
+        self.player_label.configure(image=rock)
 
-    def jouer_feuille(self):
-        self.jouer(2)
-        self.label_joueur.configure(image=feuille)
+    def play_paper(self):
+        self.play(2)
+        self.player_label.configure(image=paper)
 
-    def jouer_ciseaux(self):
-        self.jouer(3)
-        self.label_joueur.configure(image=ciseaux)
+    def play_scissors(self):
+        self.play(3)
+        self.player_label.configure(image=scissors)
 
-    def rejouer(self):
-        self.score_joueur = 0
-        self.score_intelligence_artificielle = 0
-        self.nouveau_score_joueur.configure(text=str(self.score_joueur))
-        self.nouveau_score_ia.configure(text=str(self.score_intelligence_artificielle))
-        self.label_joueur.configure(image=zero)
-        self.label_ia.configure(image=zero)
+    def play_again(self):
+        self.player_score = 0
+        self.artificial_intelligence_score = 0
+        self.new_player_score.configure(text=str(self.player_score))
+        self.new_ai_score.configure(text=str(self.artificial_intelligence_score))
+        self.player_label.configure(image=zero)
+        self.ai_label.configure(image=zero)
 
 
-fenetre = Tk()
-fenetre.title("Pierre Feuille Ciseaux")
+window = Tk()
+window.title("Rock Paper Scissors")
 
 zero = PhotoImage(file ='zero.gif')
 versus = PhotoImage(file ='vs.gif')
-pierre = PhotoImage(file ='pierre.gif')
-feuille = PhotoImage(file ='feuille.gif')
-ciseaux = PhotoImage(file ='ciseaux.gif')
+rock = PhotoImage(file ='rock.gif')
+paper = PhotoImage(file ='paper.gif')
+scissors = PhotoImage(file ='scissors.gif')
 
-texte1 = Label(fenetre, text="Vous", font=("Arial", 20, "bold"))
-texte1.grid(row=0,column=0)
+text1 = Label(window, text="You", font=("Arial", 20, "bold"))
+text1.grid(row=0,column=0)
 
-texte2 = Label(fenetre, text="Intelligence artificielle", font=("Arial", 20, "bold"))
-texte2.grid(row=0,column=2)
+text2 = Label(window, text="Artificial intelligence", font=("Arial", 20, "bold"))
+text2.grid(row=0,column=2)
 
-texte3 = Label(fenetre, text="Pour jouer, cliquez sur une des icônes ci-dessous.",font=("Arial", 20, "bold"))
-texte3.grid(row=3, columnspan =3, pady =5)
+text3 = Label(window, text="To play, click on one of the icons below.",font=("Arial", 20, "bold"))
+text3.grid(row=3, columnspan =3, pady =5)
 
-nouveau_score_joueur = Label(fenetre, text="0", font=("Arial", 20, "bold"))
-nouveau_score_joueur.grid(row=1, column=0)
+new_player_score = Label(window, text="0", font=("Arial", 20, "bold"))
+new_player_score.grid(row=1, column=0)
 
-nouveau_score_ia = Label(fenetre, text="0", font=("Arial", 20, "bold"))
-nouveau_score_ia.grid(row=1, column=2)
+new_ai_score = Label(window, text="0", font=("Arial", 20, "bold"))
+new_ai_score.grid(row=1, column=2)
 
-label_joueur = Label(fenetre, image=zero)
-label_joueur.grid(row =2, column =0)
+player_label = Label(window, image=zero)
+player_label.grid(row =2, column =0)
 
-label_vs = Label(fenetre, image=versus)
-label_vs.grid(row =2, column =1)
+vs_label = Label(window, image=versus)
+vs_label.grid(row =2, column =1)
 
-label_ia = Label(fenetre, image=zero)
-label_ia.grid(row =2, column =2)
+ai_label = Label(window, image=zero)
+ai_label.grid(row =2, column =2)
 
-jeu = PierreFeuilleCiseaux(nouveau_score_joueur, nouveau_score_ia, label_joueur, label_ia)
+game = RockPaperScissors(new_player_score, new_ai_score, player_label, ai_label)
 
-bouton_pierre = Button(fenetre,command=jeu.jouer_pierre)
-bouton_pierre.configure(image=pierre)
-bouton_pierre.grid(row =4, column =0)
+rock_button = Button(window,command=game.play_rock)
+rock_button.configure(image=rock)
+rock_button.grid(row =4, column =0)
 
-bouton_feuille = Button(fenetre,command=jeu.jouer_feuille)
-bouton_feuille.configure(image=feuille)
-bouton_feuille.grid(row =4, column =1,)
+paper_button = Button(window,command=game.play_paper)
+paper_button.configure(image=paper)
+paper_button.grid(row =4, column =1,)
 
-bouton_ciseaux = Button(fenetre,command=jeu.jouer_ciseaux)
-bouton_ciseaux.configure(image=ciseaux)
-bouton_ciseaux.grid(row =4, column =2)
+scissors_button = Button(window,command=game.play_scissors)
+scissors_button.configure(image=scissors)
+scissors_button.grid(row =4, column =2)
 
-bouton_recommencer = Button(fenetre,text='Rejouer',command=jeu.rejouer,font=("Courier", 20, "bold"))
-bouton_recommencer.grid(row =5, column =0, pady =10, sticky=E)
+play_again_button = Button(window,text='Play again',command=game.play_again,font=("Courier", 20, "bold"))
+play_again_button.grid(row =5, column =0, pady =10, sticky=E)
 
-bouton_quitter = Button(fenetre,text='Quitter',command=quit,font=("Courier", 20, "bold"))
-bouton_quitter.grid(row =5, column =2, pady =10, sticky=W)
+quit_button = Button(window,text='Quit',command=quit,font=("Courier", 20, "bold"))
+quit_button.grid(row =5, column =2, pady =10, sticky=W)
 
-fenetre.mainloop()
+window.mainloop()
