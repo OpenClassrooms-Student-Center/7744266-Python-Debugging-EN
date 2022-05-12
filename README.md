@@ -2,7 +2,7 @@
 
 This project is the case study for the course Python Debugging, available on OpenClassrooms. You'll also find corrections for the exercises seen in the course.
 
-It's a game for playing Rock-Paper-Scissors against the computer. There are 3 versions of the project: software, Flask, and Django.
+It's a game in which the user can play Rock-Paper-Scissors against the computer. There are 3 versions of the project: software, Flask, and Django.
 
 ## Dependencies and launching the program
 
