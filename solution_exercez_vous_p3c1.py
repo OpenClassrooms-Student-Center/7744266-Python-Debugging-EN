@@ -1,18 +1,18 @@
 from datetime import *
 
 try:
-    date_de_naissance = int(input("What is date of birth?"))
-    age = int(datetime.now().strftime("%Y")) - date_de_naissance
+    date_of_birth = int(input("What is your date of birth?"))
+    age = int(datetime.now().strftime("%Y")) - date_of_birth
 except:
-    print("Oups, une erreur s'est glissée dans le code.")
+    print("Oops, there's an error in the code.")
     while True:
         try:
-            date_de_naissance = int(input("Indiquer votre date de naissance, mais uniquement des chiffres."))
-            if type(date_de_naissance) == int:
-                age = int(datetime.now().strftime("%Y")) - int(date_de_naissance)
-                print(f"Tu as donc {age} ans.")
+            date_of_birth = int(input("Enter your date of birth, using only figures."))
+            if type(date_of_birth) == int:
+                age = int(datetime.now().strftime("%Y")) - int(date_of_birth)
+                print(f"You are {age} years old.")
                 break
         except:
-            print("Mince, une autre erreur s'est glissée dans le code.")  
+            print("Oh no, there's another error in the code!")  
 else:
-    print(f"Tu as donc {age} ans.")
+    print(f"You are {age} years old.")
