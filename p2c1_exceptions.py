@@ -5,10 +5,10 @@
 
 # KeyError
 
-#projectPathPythonD = {"Project 1": "Take charge of your Python training program", 
+#projectDAPythonPath = {"Project 1": "Take charge of your Python training program", 
 #                "Project 2": "Use Python basics for market analysis",
 #                "Project 3": "Design a Python application suited to a client's needs}
-#print(projectPathPythonD["Project 4"])
+#print(projectDAPythonPath["Project 4"])
 
 # IndexError
 
