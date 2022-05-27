@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <title>Rock Paper Scissors</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <!--<script src="/static/game.js"></script>-->
+</head>
+<body>
+
+<div class="text-center">
+  <h3>Ready to square up to a highly sophisticated artificial intelligence? 🤖 </h3>
+</div>
+
+<div class="container text-center">
+
+    <div class="row">
+        <div class="col-xs-offset-1 col-xs-5">
+            <h3>You</h3>
+            <h2 id="human_score">0</h2>
+        </div>
+        <div class="col-xs-5">
+            <h3>Computer</h3>
+            <h2 id="computer_score">0</h2>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-offset-2 col-sm-8">
+            <div class="col-xs-4">
+                <img src="/static/zero.gif" id="human_choice_image" width="100%">
+            </div>
+            <div class="col-xs-4">
+                <img src="/static/vs.gif" width="100%">
+            </div>
+            <div class="col-xs-4">
+                <img src="/static/zero.gif" id="computer_choice_image" width="100%">
+            </div>
+            <div class="col-xs-12 text-center">
+                <h4>To play, click on one of the images below</h4>
+            </div>
+
+            <div class="col-xs-4">
+                <img src="/static/rock.gif" width="100%" onclick="game(this.id)" id="rock">
+            </div>
+            <div class="col-xs-4">
+                <img src="/static/paper.gif" width="100%" onclick="game(this.id)" id="paper">
+            </div>
+            <div class="col-xs-4">
+                <img src="/static/scissors.gif" width="100%" onclick="game(this.id)" id="scissors">
+            </div>
+
+            <div class="row">
+                <div class="col-xs-6">
+                    <button type="button" class="btn-lg btn-primary" onclick="play_again()">Play Again</button>
+                </div>
+                <div class="col-xs-6">
+                    <a href="goodbye.html">
+                        <button type="button" class="btn-lg btn-danger">Quit</button>
+                    </a>
+                </div>
+                <div class="col-xs-12 text-center"><br>
+                    <a href="forbidden_page">
+                        <button type="button" class="btn-lg btn-danger">Forbidden page, do not click</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+let human_score = 0;
+let computer_score = 0;
+
+function game(human_choice)
+{   
+    let computer_choice = ["rock", "paper", "scissors"][Math.floor(Math.random() * 3)];
+
+    if (human_choice === "rock" && computer_choice === "paper")
+    {
+        computer_score = computer_score + 1;
+        document.getElementById("computer_score").innerHTML = computer_score;
+        document.getElementById('human_choice_image').src = "/static/"+human_choice+".gif";
+        document.getElementById('computer_choice_image').src = "/static/"+computer_choice+".gif";
+    }
+
+    else if (human_choice === "rock" && computer_choice === "scissors")
+    {
+        human_score = human_score + 1;
+        document.getElementById("human_score").innerHTML = human_score;
+        document.getElementById('human_choice_image').src = "/static/"+human_choice+".gif";
+        document.getElementById('computer_choice_image').src = "/static/"+computer_choice+".gif";
+    }
+    else if (human_choice === "paper" && computer_choice === "rock")
+    {
+        human_score = human_score + 1;
+        document.getElementById("human_score").innerHTML = human_score;
+        document.getElementById('human_choice_image').src = "/static/"+human_choice+".gif";
+        document.getElementById('computer_choice_image').src = "/static/"+computer_choice+".gif";
+    }
+
+    else if (human_choice === "paper" && computer_choice === "scissors")
+    {
+        computer_score = computer_score + 1;
+        document.getElementById("computer_score").innerHTML = computer_score;
+        document.getElementById('human_choice_image').src = "/static/"+human_choice+".gif";
+        document.getElementById('computer_choice_image').src = "/static/"+computer_choice+".gif";
+    }
+
+    else if (human_choice === "scissors" && computer_choice === "paper")
+    {
+        human_score = human_score + 1;
+        document.getElementById("human_score").innerHTML = human_score;
+        document.getElementById('human_choice_image').src = "/static/"+human_choice+".gif";
+        document.getElementById('computer_choice_image').src = "/static/"+computer_choice+".gif";
+    }
+
+    else if (human_choice === "scissors" && computer_choice === "rock")
+    {
+        computer_score = computer_score + 1;
+        document.getElementById("computer_score").innerHTML = computer_score;
+        document.getElementById('human_choice_image').src = "/static/"+human_choice+".gif";
+        document.getElementById('computer_choice_image').src = "/static/"+computer_choice+".gif";
+    }
+
+    else if (human_choice === computer_choice)
+    {
+        document.getElementById("human_score").innerHTML = human_score;
+        document.getElementById("computer_score").innerHTML = computer_score;
+        document.getElementById('human_choice_image').src = "/static/"+human_choice+".gif";
+        document.getElementById('computer_choice_image').src = "/static/"+computer_choice+".gif";
+    }
+}
+
+function play_again()
+{   
+    human_score = 0;
+    computer_score = 0;
+    
+    document.getElementById("computer_score").innerHTML = computer_score;
+    document.getElementById("human_score").innerHTML = human_score;
+
+    document.getElementById('human_choice_image').src = "/static/zero.gif";
+    document.getElementById('computer_choice_image').src = "/static/zero.gif";
+}
+</script>
+</body>
+</html>
