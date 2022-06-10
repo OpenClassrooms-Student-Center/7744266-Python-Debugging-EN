@@ -1,7 +1,7 @@
 # AttributeError
 
 # import random
-# print("The value generated is:", random.randinte(0, 10))
+# print("The value generated is:", random.randinteger(0, 10))
 
 # KeyError
 
