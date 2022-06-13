@@ -28,7 +28,7 @@
 
 # TypeError
 
-# print(40 + "2")
+# print(40 + 2)
 # print(list(42))
 # print(list({'key_1': 2, 'key_2': 8}))
 
@@ -38,14 +38,14 @@
 # print(float("5.0"))
 # print(int("green"))
 
-# FileNotFound
+# FileNotFoundError
 
-#f = open("file.txt", "r")
-#print(f.read())
+# f = open("file.txt", "r")
+# print(f.read())
  
-# ModuleNotFound
+# ModuleNotFoundError
 
-#import moduleNotFound
+# import moduleNotFound
 
 
 
