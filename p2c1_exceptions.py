@@ -30,13 +30,13 @@
 
 # print(40 + "2")
 # print(list(42))
+# print(list({'key_1': 2, 'key_2': 8}))
 
 # ValueError
 
 # print(int("5"))
 # print(float("5.0"))
 # print(int("green"))
-# print(list({'key_1': 2, 'key_2': 8}))
 
 # FileNotFound
 
@@ -46,7 +46,6 @@
 # ModuleNotFound
 
 #import moduleNotFound
-
 
 
 
