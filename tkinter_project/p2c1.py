@@ -13,12 +13,14 @@ year_of_birth = 2000
 print(f"Hello {name}, the year is {current_year}, so you are {int(current_year) - year_of_birth}.")
 """
 
-class RockPaperScissors :
+class RockPaperScissors:
     """
     A class for playing the game Rock Paper Scissors, updating the score
     depending on the user's choices, and playing again. 
     """
-    def _init_(self, new_player_score, new_ai_score, player_label, ai_label):
+    def _init_(
+        self, new_player_score, new_ai_score, player_label, ai_label
+    ):
         """
         Constructor of the class which initializes the variables
         """
@@ -59,7 +61,9 @@ class RockPaperScissors :
             self.ai_label.configure(image=scissors)
         self.update_scores(ai_choice,player_choice)
         self.new_player_score.configure(text=str(self.player_score))
-        self.new_ai_score.configure(text=str(self.artificial_intelligence_score))
+        self.new_ai_score.configure(
+            text=str(self.artificial_intelligence_score)
+        )
     
     def play_rock():
         """
@@ -89,7 +93,9 @@ class RockPaperScissors :
         self.player_score = 0
         self.artificial_intelligence_score = 0
         self.new_player_score.configure(text=str(self.player_score))
-        self.new_ai_score.configure(text=str(self.artificial_intelligence_score))
+        self.new_ai_score.configure(
+            text=str(self.artificial_intelligence_score)
+        )
         self.player_label.configure(image=zero)
         self.ai_label.configure(image=zero)
 
@@ -106,10 +112,16 @@ window.title("Rock Paper Scissors")
 text1 = Label(window, text="You", font=("Arial", "20", "bold"))
 text1.grid(row=0,column=0)
 
-text2 = Label(window, text="Artificial intelligence", font=("Arial", 20, "bold"))
+text2 = Label(
+    window, text="Artificial intelligence", font=("Arial", 20, "bold")
+)
 text2.grid(row=0,column=2)
 
-text3 = Label(window, text="To play, click on one of the icons below.",font=("Arial", 20, "bold"))
+text3 = Label(
+    window,
+    text="To play, click on one of the icons below.",
+    font=("Arial", 20, "bold")
+)
 text3.grid(row=3, columnspan =3, pady =5)
 
 new_player_score = Label(window, text="0", font=("Arial", 20, "bold"))
@@ -129,10 +141,15 @@ ai_label.grid(row =2, column =2)
 
 zero = PhotoImage(file ='zero.jpg')
 
-game = RockPaperScissors(new_player_score, new_ai_score, player_label, ai_label)
+game = RockPaperScissors(
+    new_player_score, new_ai_score, player_label, ai_label
+)
 
-rock_button = Button(window,command=game.play_rock).configure(image=rock).grid(row =4, column =0)
-
+rock_button = (
+    Button(window,command=game.play_rock)
+        .configure(image=rock)
+        .grid(row =4, column =0)
+)
 paper_button = Button(window,command=game.play_paper)
 paper_button.configure(image=paper)
 paper_button.grid(row =4, column =1,)
@@ -141,10 +158,17 @@ scissors_button = Button(window,command=game.play_scissors)
 scissors_button.configure(image=scissors)
 scissors_button.grid(row =4, column =2)
 
-play_again_button = Button(window,text='Play again',command=game.play_again,font=("Courier", 20, "bold"))
+play_again_button = Button(
+    window,
+    text='Play again',
+    command=game.play_again,
+    font=("Courier", 20, "bold")
+)
 play_again_button.grid(row =5, column =0, pady =10, sticky=E)
 
-quit_button = Button(window,text='Quit',command=quit,font=("Courier", 20, "bold"))
+quit_button = Button(
+    window,text='Quit',command=quit,font=("Courier", 20, "bold")
+)
 quit_button.grid(row =5, column =2, pady =10, sticky=W)
 
 window.mainloop()
