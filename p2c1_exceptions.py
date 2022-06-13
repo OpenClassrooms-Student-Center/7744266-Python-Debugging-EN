@@ -36,6 +36,7 @@
 # print(int("5"))
 # print(float("5.0"))
 # print(int("green"))
+# print(list({'key_1': 2, 'key_2': 8}))
 
 # FileNotFound
 
