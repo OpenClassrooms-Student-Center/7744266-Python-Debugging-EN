@@ -3,7 +3,6 @@
 from random import randint 
 import datetime
 
-"""
 print("Welcome to the game Rock Paper Scissors")
 
 name = "debugger"
@@ -11,7 +10,6 @@ current_year = datetime.datetime.now().strftime("%Y")
 year_of_birth = 2000
 
 print(f"Hello {name}, the year is {current_year}, so you are {int(current_year) - year_of_birth}.")
-"""
 
 class RockPaperScissors :
     """
