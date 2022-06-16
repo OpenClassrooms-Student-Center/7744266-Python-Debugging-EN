@@ -2,12 +2,10 @@
 
 from random import randint 
 import datetime
-import pdb
 
 print("Welcome to the game Rock Paper Scissors")
 
 name = "debugger"
-pdb.set_trace()
 current_year = datetime.datetime.now().strftime("%Y")
 year_of_birth = 2000
 
