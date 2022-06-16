@@ -11,7 +11,7 @@ year_of_birth = 2000
 
 print(f"Hello {name}, the year is {current_year}, so you are {int(current_year) - year_of_birth}.")
 
-class RockPaperScissors :
+class rock_paper_scissors :
     """
     A class for playing the game Rock Paper Scissors, updating the score
     depending on the user's choices, and playing again. 
