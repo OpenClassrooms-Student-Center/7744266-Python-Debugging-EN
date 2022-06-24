@@ -129,4 +129,4 @@ try:
 except NameError:
     print("Variables are missing")
     
-window.mainloop()
+# window.mainloop()
