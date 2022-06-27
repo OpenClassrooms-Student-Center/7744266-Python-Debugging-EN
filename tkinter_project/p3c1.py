@@ -69,7 +69,7 @@ except RuntimeError:
     print("You've used the PhotoImage function too soon. Use it after Tk()")
 
 try:
-    zero = PhotoImage(file ='zero.jep')
+    zero = PhotoImage(file ='zero.jpg')
 except TclError:
     print("It seems that the jpg image type is not supported by PhotoImage")
 
