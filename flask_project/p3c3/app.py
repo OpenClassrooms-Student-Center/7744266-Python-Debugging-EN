@@ -4,15 +4,15 @@ from flask import Flask, render_template, abort
 
 app = Flask(__name__)
 
-@app.route("/index")
+@app.route("/")
 def index():
-    return render_template("indexe.html")
+    return render_template("index.html")
 
 @app.route("/forbidden")
 def forbidden():
     abort(405)
 
-@app.route('/goodbye.html')
+@app.route('/goodbye')
 def goodbye():
     return render_template('goodbye.html')
 
