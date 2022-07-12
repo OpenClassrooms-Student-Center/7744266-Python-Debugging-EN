@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 @app.route("/index")
 def index():
-    return render_template("index.html")
+    return render_template("indexe.html")
 
 @app.route("/forbidden")
 def forbidden():
