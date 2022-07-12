@@ -12,7 +12,7 @@ def index():
 def forbidden():
     abort(405)
 
-@app.route('/goodbye')
+@app.route('/goodbye.html')
 def goodbye():
     return render_template('goodbye.html')
 
